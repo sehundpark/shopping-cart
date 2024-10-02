@@ -25,7 +25,6 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: start;
   min-width: 320px;
   min-height: 100vh;
   padding: 2rem;
@@ -73,23 +72,63 @@ button:focus-visible {
   flex-direction: row;
 }
 
+.store-container-title {
+  text-align: center;
+}
+
 .product-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
 
 .product-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 250px;
-  max-height: 350px;
+  width: 250px;
+  height: 350px;
   padding: 12px;
   border: black solid 2px;
   margin: 10px;
+  overflow: auto;
+}
+
+.product-title {
+  height: 60px;
+  overflow: hidden;
+  text-align: center;
 }
 
 .product-description {
   overflow: auto;
+}
+
+.product-image-container {
+  display: flex;
+  height: 150px;
+  width: 230px;
+  border: 1px dashed black;
+  justify-content: center;
+}
+
+.product-image {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  justify-content: center;
+}
+
+.homepage-header {
+  display: flex;
+  text-align: center;
+  max-width: 100%;
 }

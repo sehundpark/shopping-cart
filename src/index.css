@@ -23,10 +23,12 @@ a:hover {
 }
 
 body {
+  background-color: white;
   margin: 0;
   display: flex;
   min-width: 320px;
   min-height: 100vh;
+  max-width: 100%;
   padding: 2rem;
 }
 
@@ -45,6 +47,7 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  margin: 10px;
 }
 button:hover {
   border-color: #646cff;
@@ -70,6 +73,7 @@ button:focus-visible {
 .nav-bar {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .store-container-title {
@@ -89,11 +93,14 @@ button:focus-visible {
   flex-direction: column;
   align-items: center;
   width: 250px;
-  height: 350px;
+  height: 450px;
   padding: 12px;
   border: black solid 2px;
+  border-radius: 10px;
   margin: 10px;
   overflow: auto;
+  gap: 5px;
+  background-color: white;
 }
 
 .product-title {
@@ -110,7 +117,6 @@ button:focus-visible {
   display: flex;
   height: 150px;
   width: 230px;
-  border: 1px dashed black;
   justify-content: center;
 }
 
@@ -131,4 +137,20 @@ button:focus-visible {
   display: flex;
   text-align: center;
   max-width: 100%;
+}
+
+.navigation-clicks {
+  font-size: 25px;
+  height: 30px;
+  padding: 10px;
+  gap: 10px;
+}
+
+.navigation-bar-title {
+  font-size: 25px;
+  height: 30px;
+  padding: 10px;
+  gap: 10px;
+  justify-self: center;
+  align-self: center;
 }

@@ -18,7 +18,7 @@ const NavBar = () => {
       <div className="navigation-bar-title">Retail Store</div>
       <div>
         <Link to="/cart">
-          <img src={cartIcon} className="navigation-clicks" alt="Cart" />
+          <img src={cartIcon} className="cart-image" alt="Cart" />
         </Link>
       </div>
     </nav>

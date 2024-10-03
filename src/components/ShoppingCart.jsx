@@ -2,7 +2,8 @@ import React from "react";
 import { useCart } from "./CartContext";
 
 const ShoppingCart = () => {
-  const { cartItems, updateCartItemQuantity, getTotalPrice } = useCart();
+  const { cartItems, updateCartItemQuantity, removeFromCart, getTotalPrice } =
+    useCart();
 
   return (
     <div className="shopping-cart">
@@ -13,8 +14,9 @@ const ShoppingCart = () => {
         <>
           <ul>
             {cartItems.map((item) => (
-              <li key={item.id}>
-                {item.title} - ${item.price.toFixed(2)} x
+              <li key={item.id} className="cart-item">
+                <span>{item.title}</span>
+                <span>${item.price.toFixed(2)} x</span>
                 <input
                   type="number"
                   value={item.quantity}
@@ -24,14 +26,20 @@ const ShoppingCart = () => {
                       parseInt(e.target.value, 10)
                     )
                   }
-                  min="0"
+                  min="1"
                   style={{
                     width: "50px",
                     marginLeft: "5px",
                     marginRight: "5px",
                   }}
                 />
-                = ${(item.price * item.quantity).toFixed(2)}
+                <span>= ${(item.price * item.quantity).toFixed(2)}</span>
+                <button
+                  onClick={() => removeFromCart(item.id)}
+                  className="remove-item-btn"
+                >
+                  Remove
+                </button>
               </li>
             ))}
           </ul>

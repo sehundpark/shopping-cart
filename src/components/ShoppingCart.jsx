@@ -1,9 +1,14 @@
 import React from "react";
-import { useCart } from "./CartContext";
+import { useCart } from "../components/CartContext";
 
 const ShoppingCart = () => {
-  const { cartItems, updateCartItemQuantity, removeFromCart, getTotalPrice } =
-    useCart();
+  const {
+    cartItems,
+    updateCartItemQuantity,
+    removeFromCart,
+    clearCart,
+    getTotalPrice,
+  } = useCart();
 
   return (
     <div className="shopping-cart">
@@ -27,11 +32,6 @@ const ShoppingCart = () => {
                     )
                   }
                   min="1"
-                  style={{
-                    width: "50px",
-                    marginLeft: "5px",
-                    marginRight: "5px",
-                  }}
                 />
                 <span>= ${(item.price * item.quantity).toFixed(2)}</span>
                 <button
@@ -46,6 +46,9 @@ const ShoppingCart = () => {
           <p>
             <strong>Total: ${getTotalPrice().toFixed(2)}</strong>
           </p>
+          <button onClick={clearCart} className="clear-cart-btn">
+            Clear Cart
+          </button>
         </>
       )}
     </div>

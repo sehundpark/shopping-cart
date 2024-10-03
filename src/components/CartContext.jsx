@@ -4,6 +4,7 @@ const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
+  const [notification, setNotification] = useState(null);
 
   const addToCart = (product, quantity) => {
     setCartItems((prevItems) => {
@@ -17,6 +18,9 @@ export const CartProvider = ({ children }) => {
       }
       return [...prevItems, { ...product, quantity }];
     });
+    setNotification(
+      `Added ${quantity} ${quantity === 1 ? "item" : "items"} to cart`
+    );
   };
 
   const updateCartItemQuantity = (productId, newQuantity) => {
@@ -35,11 +39,24 @@ export const CartProvider = ({ children }) => {
     );
   };
 
+  const clearCart = () => {
+    setCartItems([]);
+    setNotification("Cart has been cleared");
+  };
+
   const getTotalPrice = () => {
     return cartItems.reduce(
       (total, item) => total + item.price * item.quantity,
       0
     );
+  };
+
+  const getTotalItems = () => {
+    return cartItems.reduce((total, item) => total + item.quantity, 0);
+  };
+
+  const clearNotification = () => {
+    setNotification(null);
   };
 
   return (
@@ -49,7 +66,11 @@ export const CartProvider = ({ children }) => {
         addToCart,
         updateCartItemQuantity,
         removeFromCart,
+        clearCart,
         getTotalPrice,
+        getTotalItems,
+        notification,
+        clearNotification,
       }}
     >
       {children}

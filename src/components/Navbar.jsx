@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import HomePage from "../pages/HomePage";
-import ShopPage from "../pages/ShopPage";
+import { useCart } from "./CartContext";
 import cartIcon from "../assets/cart_17658761.png";
 
 const NavBar = () => {
+  const { getTotalItems } = useCart();
+
   return (
     <nav className="nav-bar">
       <div>
@@ -16,9 +17,12 @@ const NavBar = () => {
         </Link>
       </div>
       <div className="navigation-bar-title">Retail Store</div>
-      <div>
+      <div className="cart-container">
         <Link to="/cart">
           <img src={cartIcon} className="cart-image" alt="Cart" />
+          {getTotalItems() > 0 && (
+            <span className="cart-count">{getTotalItems()}</span>
+          )}
         </Link>
       </div>
     </nav>

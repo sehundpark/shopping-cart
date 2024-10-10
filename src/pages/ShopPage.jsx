@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
-import ProductList from "../components/ProductList";
+import { ProductList } from "../components/ProductList";
 
-const ShopPage = () => {
+export const ShopPage = () => {
   return (
     <div className="shop-page">
       <div className="products-grid">
@@ -10,5 +9,3 @@ const ShopPage = () => {
     </div>
   );
 };
-
-export default ShopPage;

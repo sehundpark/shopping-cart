@@ -1,22 +1,20 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "./CartContext";
 import cartIcon from "../assets/cart_17658761.png";
 
-const NavBar = () => {
+export const NavBar = () => {
   const { getTotalItems } = useCart();
 
   return (
     <nav className="nav-bar">
-      <div>
+      <div className="links-container">
         <Link to="/" className="navigation-clicks">
-          Home
+          Sehun Park's E-Commerce Test Site
         </Link>
         <Link to="/shop" className="navigation-clicks">
           Shop
         </Link>
       </div>
-      <div className="navigation-bar-title">Retail Store</div>
       <div className="cart-container">
         <Link to="/cart">
           <img src={cartIcon} className="cart-image" alt="Cart" />
@@ -28,5 +26,3 @@ const NavBar = () => {
     </nav>
   );
 };
-
-export default NavBar;

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useCart } from "./CartContext";
 
-const ProductCard = ({ product }) => {
+export const ProductCard = ({ product }) => {
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState(1);
 
@@ -13,7 +13,7 @@ const ProductCard = ({ product }) => {
   const handleAddToCart = () => {
     if (quantity > 0) {
       addToCart(product, quantity);
-      setQuantity(1); // Reset quantity after adding to cart
+      setQuantity(1);
     }
   };
 
@@ -34,6 +34,7 @@ const ProductCard = ({ product }) => {
           value={quantity}
           onChange={handleQuantityChange}
           min="0"
+          max="999"
         />
       </div>
       <button
@@ -46,5 +47,3 @@ const ProductCard = ({ product }) => {
     </div>
   );
 };
-
-export default ProductCard;

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import ProductCard from "./ProductCard";
+import { useState, useEffect } from "react";
+import { ProductCard } from "./ProductCard";
 
-const ProductList = () => {
+export const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -38,5 +38,3 @@ const ProductList = () => {
     </div>
   );
 };
-
-export default ProductList;

@@ -55,6 +55,7 @@ body {
 #root {
   flex-grow: 1;
   width: 100%;
+  background-color: #412525;
 }
 
 .app-container {
@@ -114,13 +115,83 @@ button:focus-visible {
 
 .nav-bar {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  height: 2.5rem;
+  align-items: center;
+  padding: 0 20px;
+  height: 60px;
+  background-color: #8b4513;
+  color: white;
+  margin: 10px 10px;
+}
+
+.links-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 25px;
+  width: 100%;
+}
+
+.navigation-clicks {
+  color: white;
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
+.navigation-clicks:first-child {
+  font-size: 1.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cart-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.cart-container:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.cart-image {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1); /* This makes the icon white */
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #ff4d4d;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: bold;
+  min-width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #8b4513;
 }
 
 .store-container-title {
   text-align: center;
+  color: white;
+  text-align: center;
+  max-width: 100%;
+  margin-top: 15px;
+  font-size: 28px;
 }
 
 .product-list {
@@ -172,22 +243,52 @@ button:focus-visible {
 .home-page {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   max-width: 100%;
-  justify-content: center;
+  justify-content: start;
+  gap: 10px;
   margin: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  background-image: url("./assets/stylish-woman-with-shopping-bags.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: calc(100vh - 20px);
 }
 
 .homepage-header {
-  display: flex;
-  text-align: center;
+  color: white;
+  font-size: 28px;
+  background-color: rgba(139, 69, 19, 0.7);
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 15px 0;
   max-width: 100%;
+  box-sizing: border-box;
 }
 
-.navigation-clicks {
-  font-size: 25px;
-  height: 30px;
-  padding: 10px;
-  gap: 10px;
+.homepage-text {
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+  color: black;
+  font-size: 18px;
+  gap: 20px;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.homepage-text-list {
+  padding-left: 2rem;
+  list-style-type: disc;
+}
+
+.homepage-text-list li {
+  margin-bottom: 10px;
 }
 
 .navigation-bar-title {
@@ -196,63 +297,131 @@ button:focus-visible {
   align-self: center;
 }
 
+.cart-icon {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+
+.add-to-cart-button {
+  background-color: rgb(216, 201, 201);
+}
+
 .shopping-cart {
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 800px;
+  margin: 20px auto;
   padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.shopping-cart h2 {
+  color: #8b4513;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .cart-item {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
   align-items: center;
+  gap: 10px;
   margin-bottom: 10px;
   padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.cart-item:hover {
+  background-color: #f0f0f0;
+}
+
+.cart-item-title {
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cart-item-price,
+.cart-item-quantity,
+.cart-item-total {
+  text-align: center;
+}
+
+.cart-item input[type="number"] {
+  width: 60px;
+  padding: 5px;
   border: 1px solid #ddd;
   border-radius: 4px;
+  text-align: center;
 }
 
-.cart-item span {
-  margin-right: 10px;
+.quantity-control input[type="number"] {
+  width: 60px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
 }
 
-.remove-item-btn {
+.shopping-cart-btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.remove-item-btn,
+.clear-cart-btn {
   background-color: #ff4d4d;
   color: white;
   border: none;
   padding: 5px 10px;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.remove-item-btn:hover {
+.checkout-btn {
+  background-color: #22ca1c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.checkout-btn:hover {
+  background-color: #5dd359;
+}
+
+.remove-item-btn:hover,
+.clear-cart-btn:hover {
   background-color: #ff1a1a;
 }
 
-.clear-cart-btn {
-  background-color: #f44336;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
+.cart-total {
+  text-align: right;
+  font-weight: bold;
+  font-size: 18px;
+  color: #8b4513;
   margin-top: 20px;
 }
 
-.clear-cart-btn:hover {
-  background-color: #d32f2f;
+.shopping-cart p strong {
+  font-size: 18px;
+  color: #8b4513;
 }
 
-input[type="number"] {
-  width: 50px;
-  padding: 5px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.cart-image {
-  width: 40px;
-  height: 40px;
+.cart-empty {
+  text-align: center;
+  color: #666;
+  font-style: italic;
 }
 
 .sliding-notification {

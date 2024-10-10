@@ -1,11 +1,10 @@
-import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import NavBar from "./components/Navbar";
+import { NavBar } from "./components/Navbar";
 import { CartProvider, useCart } from "./components/CartContext";
-import HomePage from "./pages/HomePage";
-import ShopPage from "./pages/ShopPage";
-import ShoppingCart from "./components/ShoppingCart";
-import SlidingNotification from "./components/SlidingNotification";
+import { HomePage } from "./pages/HomePage";
+import { ShopPage } from "./pages/ShopPage";
+import { ShoppingCart } from "./components/ShoppingCart";
+import { SlidingNotification } from "./components/SlidingNotification";
 
 // New component to wrap the app content
 const AppContent = () => {

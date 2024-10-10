@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
-const SlidingNotification = ({ message, onClose, duration = 5000 }) => {
+export const SlidingNotification = ({ message, onClose, duration = 5000 }) => {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
@@ -19,5 +19,3 @@ const SlidingNotification = ({ message, onClose, duration = 5000 }) => {
     </div>
   );
 };
-
-export default SlidingNotification;

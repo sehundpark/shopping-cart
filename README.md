@@ -4,6 +4,8 @@ This project is a React-based shopping cart application that allows users to bro
 
 ## Live Demo
 
+![shoppingcart](https://github.com/user-attachments/assets/34311420-c259-4e30-a6eb-5cf3c3951883)
+
 Check out the live demo of the project: [Shopping Cart Demo](https://sehunshoppingcart.netlify.app/)
 
 ## Features

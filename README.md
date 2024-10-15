@@ -1,6 +1,6 @@
 # Shopping Cart Project
 
-This project is a React-based shopping cart application that allows users to browse products, add them to a cart, and manage their shopping experience.
+This React-based e-commerce application offers a dynamic user experience with product browsing, cart management, and checkout simulation. The app leverages React's state management through hooks (useState, useEffect) to track items in the cart and manage quantities, with persistent local storage ensuring the cart remains intact across sessions. Styled-components were used for modular and maintainable CSS, allowing for a responsive and polished UI. The project also includes custom utility functions for calculating total costs and updating cart states efficiently. Integrated routing (react-router-dom) enables seamless navigation between product listings and cart views. Hosted on Netlify for fast deployment and performance optimization.
 
 ## Live Demo
 
@@ -20,9 +20,10 @@ Check out the live demo of the project: [Shopping Cart Demo](https://sehunshoppi
 ## Tech Stack
 
 - React
-- React Router for navigation
-- Context API for state management
-- CSS for styling
+- Styled-components
+- React-router-dom
+- LocalStorage
+- Netlify
 
 ## Project Structure
 
